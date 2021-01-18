@@ -1,0 +1,28 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  .modal-content {
+    padding: 50px;
+    border-radius: 10px;
+    background-color: white;
+    height: 200px;
+    width: 400px;
+    margin-top: 30px;
+    text-align: center;
+    p {
+      font-size: 25px;
+    }
+    button {
+      font-size: 15px;
+      margin-top: 30px;
+      padding: 5px;
+      width: 75px;
+    }
+  }
+}

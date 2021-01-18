@@ -1,0 +1,86 @@
+@import './components/Modal.scss';
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+
+  .my-list {
+    margin-right: 9%;
+    li {
+      padding-top: 29px;
+      margin-bottom: 30px;
+      text-align: center;
+      border: 2px outset black;
+      height: 90px;
+      width: 300px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .main-block {
+    margin-left: 7%;
+    .main-header {
+      height: 130px;
+      width: 440px;
+      border: 2px outset black;
+      position: relative;
+      background-color: rgb(19, 136, 19);
+      img {
+        position: absolute;
+        top: 20px;
+        left: 0px;
+      }
+      p {
+        margin-top: 40px;
+        margin-left: 90px;
+        font-size: 40px;
+        font-weight: 700;
+        color: cornsilk;
+      }
+    }
+    .main-header {
+      cursor: pointer;
+    }
+    .creating-list {
+      height: 400px;
+      width: 440px;
+      border: 2px outset black;
+      p {
+        font-size: 27px;
+        padding-top: 10px;
+        padding-left: 20px;
+      }
+      input {
+        margin-top: 10px;
+        margin-left: 20px;
+        padding: 7px 12px;
+        font-size: 16px;
+        width: 370px;
+      }
+      .button-cancel {
+        margin-top: 200px;
+        margin-left: 70px;
+        padding: 10px 40px;
+        border: black outset 2px;
+        &:hover {
+          background-color: rgb(70, 73, 70);
+          color: white;
+          cursor: pointer;
+        }
+      }
+      .button-save {
+        margin-left: 20px;
+        padding: 10px 40px;
+        background-color: rgb(19, 136, 19);
+        color: white;
+        border: black outset 2px;
+        &:hover {
+          cursor: pointer;
+          background-color: rgb(7, 34, 7);
+        }
+      }
+    }
+  }
+}
