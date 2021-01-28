@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 
 export const setActiveBoard = id => {
   return {
@@ -7,7 +8,7 @@ export const setActiveBoard = id => {
 };
 
 export const addBoard = title => {
-  const id = `${Math.floor(Math.random() * 100)}_${Math.floor(Math.random() * 100)}_${Math.floor(Math.random() * 100)}`;
+  const id = uuidv4();
   return {
     type: "ADD_BOARD",
     payload: { title, id }

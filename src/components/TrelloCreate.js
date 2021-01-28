@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import TrelloButton from "./TrelloButton";
 import { connect } from "react-redux";
 import { addList, addCard } from "../action";
@@ -6,10 +7,13 @@ import TrelloForm from "./TrelloForm";
 import TrelloOpenForm from "./TrelloOpenForm";
 
 class TrelloCreate extends React.PureComponent {
-  state = {
-    formOpen: false,
-    text: ""
-  };
+  constructor(props){
+    super(props);
+    this.state={
+      formOpen: false,
+      text: ""
+    }
+  }
 
   openForm = () => {
     this.setState({
@@ -46,7 +50,6 @@ class TrelloCreate extends React.PureComponent {
   handleAddCard = () => {
     const { dispatch, listID } = this.props;
     const { text } = this.state;
-
     if (text) {
       this.setState({
         text: ""
@@ -74,5 +77,9 @@ class TrelloCreate extends React.PureComponent {
     );
   }
 }
-
+TrelloCreate.propTypes={
+  dispatch:PropTypes.func,
+  listID:PropTypes.string,
+  list:PropTypes.bool
+}
 export default connect()(TrelloCreate);

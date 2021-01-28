@@ -1,6 +1,7 @@
+import { v4 as uuidv4 } from 'uuid';
 
 export const addCard = (listID, text) => {
-  const id = `${Math.floor(Math.random() * 100)}_${Math.floor(Math.random() * 100)}_${Math.floor(Math.random() * 100)}`;
+  const id = uuidv4();
   return {
     type: "ADD_CARD",
     payload: { text, listID, id }

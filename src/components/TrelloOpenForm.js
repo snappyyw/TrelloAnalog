@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types'
 
 const TrelloOpenForm = ({ list, children, onClick }) => {
   const buttonTextBackground = list ? "rgba(0,0,0,.15)" : "inherit";
@@ -25,5 +26,11 @@ const TrelloOpenForm = ({ list, children, onClick }) => {
     </OpenFormButton>
   );
 };
+
+TrelloOpenForm.propTypes={
+  list:PropTypes.bool,
+  children:PropTypes.string,
+  onClick:PropTypes.func
+}
 
 export default TrelloOpenForm;

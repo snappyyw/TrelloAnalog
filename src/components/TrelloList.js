@@ -4,7 +4,7 @@ import TrelloCreate from "./TrelloCreate";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import { editTitle, deleteList } from "../action";
-
+import PropTypes from 'prop-types'
 
 
 const TrelloList = ({ title, cards, listID, index, dispatch }) => {
@@ -89,5 +89,12 @@ const TrelloList = ({ title, cards, listID, index, dispatch }) => {
     </Draggable>
   );
 };
+TrelloList.protoType={
+ title:PropTypes.string,
+ cards:PropTypes.object,
+ listID:PropTypes.string,
+ index:PropTypes.number,
+ dispatch:PropTypes.func
+}
 
 export default connect()(TrelloList);

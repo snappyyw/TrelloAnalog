@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import styled from "styled-components";
 import Textarea from "react-textarea-autosize";
 import Card from "@material-ui/core/Card";
@@ -19,7 +20,6 @@ const StyledTextArea = styled(Textarea)`
 
 const TrelloForm = React.memo(
   ({ text = "", onChange, closeForm, children }) => {
-
     const handleFocus = e => {
       e.target.select();
     };
@@ -43,5 +43,11 @@ const TrelloForm = React.memo(
     );
   }
 );
+TrelloForm.protoType={
+  text: PropTypes.string,
+  onChange: PropTypes.func,
+  closeForm: PropTypes.func,
+  children:PropTypes.array
+}
 
 export default TrelloForm;

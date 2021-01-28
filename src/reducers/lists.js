@@ -16,12 +16,9 @@ const listsReducer = (state =initialState, action) => {
         id: `list-${id}`,
         cards: []
       };
-
       const newState = { ...state, [`list-${id}`]: newList };
-
       return newState;
     }
-
     case "ADD_CARD": {
       const { listID, id } = action.payload;
       const list = state[listID];

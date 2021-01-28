@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from 'prop-types'
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
@@ -7,6 +8,7 @@ import TrelloForm from "./TrelloForm";
 import { editCard, deleteCard } from "../action";
 import { connect } from "react-redux";
 import TrelloButton from "./TrelloButton";
+
 
 
 
@@ -65,8 +67,14 @@ const TrelloCard = React.memo(({ text, id, listID, index, dispatch }) => {
       </Draggable>
     );
   };
-
   return isEditing ? renderEditForm() : renderCard();
 });
+TrelloCard.propTypes={
+  text: PropTypes.string,
+  id:PropTypes.string,
+  listID:PropTypes.string,
+  index: PropTypes.number,
+  dispatch: PropTypes.func
+}
 
 export default connect()(TrelloCard);

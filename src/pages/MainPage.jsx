@@ -20,9 +20,9 @@ function MainPage({boards, boardOrder, dispatch }) {
       setVisibleList(!visibleList)
     }
     const renderBoards = () => {
+      if(renderBoards!==null){
       return boardOrder.map((ID) => {
         const board = boards[ID];
-    
         return (
           <Link
             key={ID}
@@ -33,6 +33,7 @@ function MainPage({boards, boardOrder, dispatch }) {
         );
       });
     }
+  }
     
     return(
     <>

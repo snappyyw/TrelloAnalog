@@ -1,9 +1,9 @@
-
+import { v4 as uuidv4 } from 'uuid';
 
 export const addList = title => {
   return (dispatch, getState) => {
     const boardID = getState().activeBoard;
-    const id = `${Math.floor(Math.random() * 100)}_${Math.floor(Math.random() * 100)}_${Math.floor(Math.random() * 100)}`
+    const id = uuidv4();
     dispatch({
       type: "ADD_LIST",
       payload: { title, boardID, id }

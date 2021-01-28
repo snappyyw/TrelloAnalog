@@ -20,7 +20,6 @@ class BoardPage extends PureComponent {
       if (!destination) {
         return;
       }
-  
       this.props.dispatch(
         sort(
           source.droppableId,
@@ -32,13 +31,11 @@ class BoardPage extends PureComponent {
         )
       );
     };
-  
     render() {
       const { lists, cards, match, boards } = this.props;
       const { boardID } = match.params;
       const board = boards[boardID];
       const listOrder = board.lists;
-  
       return (
         <DragDropContext onDragEnd={this.onDragEnd}>
             <div className="bloc-smile">
@@ -51,7 +48,7 @@ class BoardPage extends PureComponent {
                 {...provided.droppableProps}
                 ref={provided.innerRef}
               >
-                {listOrder.map((listID, index) => {
+                {listOrder&&listOrder.map((listID, index) => {
                   const list = lists[listID];
                   if (list) {
                     const listCards = list.cards.map(cardID => cards[cardID]);
@@ -75,7 +72,6 @@ class BoardPage extends PureComponent {
       );
     }
   }
-
 
 const mapStateToProps = state => ({
     lists: state.lists,

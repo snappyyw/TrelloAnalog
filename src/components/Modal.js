@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Modal=({active, setActive})=>{
     return(
@@ -12,6 +13,10 @@ const Modal=({active, setActive})=>{
         }
     </>
     )
+}
+Modal.propTypes={
+    active: PropTypes.bool,
+    setActive: PropTypes.func,
 }
 
 export default Modal;

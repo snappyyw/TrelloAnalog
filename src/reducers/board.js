@@ -23,7 +23,6 @@ const boardsReducer = (state =initialState, action) => {
       const {
         droppableIndexEnd,
         droppableIndexStart,
-
         type
       } = action.payload;
 
