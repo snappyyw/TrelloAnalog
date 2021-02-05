@@ -71,7 +71,7 @@ class BoardPage extends PureComponent {
         </DragDropContext>
       );
     }
-  }
+}
 
 const mapStateToProps = state => ({
     lists: state.lists,

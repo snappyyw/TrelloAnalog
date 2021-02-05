@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 const TrelloList = ({ title, cards, listID, index, dispatch }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [listTitle, setListTitle] = useState(title);
-
+  
   const renderEditInput = () => {
     return (
       <form onSubmit={handleFinishEditing}>
@@ -38,7 +38,7 @@ const TrelloList = ({ title, cards, listID, index, dispatch }) => {
 
   const handleFinishEditing = e => {
     setIsEditing(false);
-    dispatch(editTitle(listID, listTitle));
+    dispatch(editTitle({listID, listTitle}));
   };
 
   const handleDeleteList = () => {
@@ -69,7 +69,7 @@ const TrelloList = ({ title, cards, listID, index, dispatch }) => {
                   )}
                 </div>
                 <div {...provided.droppableProps} ref={provided.innerRef}>
-                  {cards.map((card, index) => (
+                  {cards&&cards.map((card, index) => (
                     <TrelloCard
                       key={card.id}
                       text={card.text}

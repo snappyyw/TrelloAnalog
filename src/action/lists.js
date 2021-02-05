@@ -36,12 +36,13 @@ export const sort = (
   };
 };
 
-export const editTitle = (listID, newTitle) => {
+export const editTitle = ({listID, listTitle}) => {
+
   return {
     type: "EDIT_LIST_TITLE",
     payload: {
       listID,
-      newTitle
+      newTitle: listTitle
     }
   };
 };

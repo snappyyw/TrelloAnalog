@@ -32,7 +32,6 @@ const TrelloCard = React.memo(({ text, id, listID, index, dispatch }) => {
   };
 
   const handleDeleteCard = e => {
-    console.log(listID);
     dispatch(deleteCard(id, listID));
   };
 
@@ -58,7 +57,7 @@ const TrelloCard = React.memo(({ text, id, listID, index, dispatch }) => {
               <button className='delate-button' onMouseDown={handleDeleteCard}>
                 Удалить
               </button>
-              <CardContent>
+              <CardContent >
                 <Typography>{text}</Typography>
               </CardContent>
             </Card>

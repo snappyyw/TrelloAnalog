@@ -21,19 +21,19 @@ function MainPage({boards, boardOrder, dispatch }) {
     }
     const renderBoards = () => {
       if(renderBoards!==null){
-      return boardOrder.map((ID) => {
-        const board = boards[ID];
-        return (
-          <Link
-            key={ID}
-            to={`/${board.id}`}
-            style={{ textDecoration: "none" }}>
-            <li key={board.id}>{board.title}</li>
-          </Link>
-        );
-      });
+        return boardOrder.map((ID) => {
+          const board = boards[ID];
+          return (
+            <Link
+              key={ID}
+              to={`/${board.id}`}
+              style={{ textDecoration: "none" }}>
+              <li key={board.id}>{board.title}</li>
+            </Link>
+          );
+        });
+      }
     }
-  }
     
     return(
     <>

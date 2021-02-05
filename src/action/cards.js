@@ -15,6 +15,7 @@ export const editCard = (id, listID, newText) => {
   };
 };
 
+
 export const deleteCard = (id, listID) => {
   return {
     type: "DELETE_CARD",

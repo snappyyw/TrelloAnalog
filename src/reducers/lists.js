@@ -77,6 +77,7 @@ const listsReducer = (state =initialState, action) => {
       list.title = newTitle;
       return { ...state, [listID]: list };
     }
+    
 
     case "DELETE_LIST": {
       const { listID } = action.payload;
